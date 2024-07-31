@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="/Layouts/_mainLayout">
+
+<div layout:fragment="content">
+    <h1>Detalles del Producto</h1>
+    <form th:object="${producto}">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" th:field="*{nombreDEML}" id="nombre" readonly>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="descripcion">Descripción</label>
+                    <textarea class="form-control" th:field="*{descripcionDEML}" id="descripcion" cols="12" rows="3" readonly></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="precio">Precio</label>
+                    <input type="number" class="form-control" th:field="*{precioDEML}" id="precio" readonly>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="fechaVencimiento">Fecha de Vencimiento</label>
+                    <input type="date" class="form-control" th:field="*{fechaVencimientoDEML}" id="fechaVencimiento" readonly>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="estatus">Estatus</label>
+                    <input type="text" class="form-control" th:field="*{estatusDEML}" id="estatus" readonly>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="existencia">Existencia</label>
+                    <input type="number" class="form-control" th:field="*{existencia}" id="existencia" readonly>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <a th:href="@{/Productos}" class="btn btn-outline-primary">Regresar</a>
+    </form>
+</div>
